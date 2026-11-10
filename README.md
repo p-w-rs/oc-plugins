@@ -1,7 +1,7 @@
 # OpenCode plugins
 
 Plugins that let [OpenCode](https://opencode.ai) agents work with the systems you
-already use: your machines, GitHub, Jira and Confluence, Rhythms, RunPod, Azure
+already use: your machines, GitHub, Hugging Face, Jira and Confluence, Rhythms, RunPod, Azure
 and Microsoft 365. Each one adds tools, a view in OpenCode (**Settings** and the
 Review pane) and built-in know-how for agents, without changing how OpenCode
 itself works.
@@ -10,13 +10,14 @@ itself works.
 |---|---|
 | [oc-machine](https://github.com/p-w-rs/oc-machine) | Use your SSH machines (keys, jump hosts, passwords, sudo) and env vars from their own shell |
 | [oc-github](https://github.com/p-w-rs/oc-github) | Use `git` and `gh` with several GitHub accounts; the right login per command |
+| [oc-huggingface](https://github.com/p-w-rs/oc-huggingface) | Find, download and upload models and datasets with `hf`, git and Python using your Hugging Face login; Hub search, papers and docs |
 | [oc-atlassian](https://github.com/p-w-rs/oc-atlassian) | Search, read and update Jira issues and Confluence pages |
 | [oc-rhythms](https://github.com/p-w-rs/oc-rhythms) | Read and update OKRs, check-ins and documents in Rhythms |
 | [oc-runpod](https://github.com/p-w-rs/oc-runpod) | Manage RunPod pods, serverless and storage; SSH and rsync into pods |
 | [oc-azure](https://github.com/p-w-rs/oc-azure) | Use the Azure CLI with your sign-in; SSH into VMs; Entra ID, DevOps, AI |
 | [oc-m365](https://github.com/p-w-rs/oc-m365) | Outlook mail and calendar, Teams, OneDrive and SharePoint (your IT may need to approve access) |
 | [oc-claude](https://github.com/p-w-rs/oc-claude) | Use Claude models in OpenCode with your own Claude sign-in (`/connect` → OpenClaude). Unofficial; check your account's terms |
-| [oc-enhance](https://github.com/p-w-rs/oc-enhance) | Task notes with a Pause/Resume button and handoffs to colleagues; read Word, Excel, PowerPoint and PDF; search a project by meaning; shared terminals; Pixi know-how |
+| [oc-enhance](https://github.com/p-w-rs/oc-enhance) | Task notes with a Pause/Resume button and handoffs to colleagues; read Word, Excel, PowerPoint and PDF; search a project by meaning; shared terminals; Pixi and machine-learning know-how (training with MLflow, TensorRT 11 / Jetson deployment, GPU kernels) |
 
 ## Install
 
@@ -42,7 +43,7 @@ Run `install.sh` again to update. To remove a plugin: `cd oc-<name> && pixi run 
 
 ## How they behave
 
-The account plugins (machine through m365) share these rules; oc-claude and
+The account plugins (machine through m365, and huggingface) share these rules; oc-claude and
 oc-enhance follow the same "don't change vanilla OpenCode" rule.
 
 - **Agents never see your secrets.** Tokens, keys and passwords are stored
