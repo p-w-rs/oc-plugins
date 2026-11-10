@@ -15,6 +15,8 @@ itself works.
 | [oc-runpod](https://github.com/p-w-rs/oc-runpod) | Manage RunPod pods, serverless and storage; SSH and rsync into pods |
 | [oc-azure](https://github.com/p-w-rs/oc-azure) | Use the Azure CLI with your sign-in; SSH into VMs; Entra ID, DevOps, AI |
 | [oc-m365](https://github.com/p-w-rs/oc-m365) | Outlook mail and calendar, Teams, OneDrive and SharePoint (your IT may need to approve access) |
+| [oc-claude](https://github.com/p-w-rs/oc-claude) | Use Claude models in OpenCode with your own Claude sign-in (`/connect` → OpenClaude). Release candidate; unofficial, check your account's terms |
+| [oc-enhance](https://github.com/p-w-rs/oc-enhance) | Task notes, Pause/Resume, handoffs, local document search, shared terminals. Release candidate; macOS on Apple Silicon only (skipped elsewhere) |
 
 ## Install
 
@@ -32,9 +34,18 @@ verified snapshot into your OpenCode config (`~/.config/opencode`). Then restart
 OpenCode (or `/reload`) and add your accounts under **Settings**, or simply ask
 your agent, e.g. "connect my GitHub account" or "set up Jira for acme.atlassian.net".
 
+oc-enhance installs with checkpoints and document search on; set
+`OC_ENHANCE_FLAGS="--checkpoints --evidence --terminals"` to also share the
+Review-pane terminals with agents. For oc-claude, run `/connect` → **OpenClaude**
+in OpenCode to sign in, then pick an `open-claude/...` model in `/models`.
+
 Run `install.sh` again to update. To remove a plugin: `cd oc-<name> && pixi run uninstall`.
 
 ## How they behave
+
+The account plugins (machine through m365) share these rules; oc-claude and
+oc-enhance follow the same "don't change vanilla OpenCode" rule and document
+their own details.
 
 - **Agents never see your secrets.** Tokens, keys and passwords are stored
   encrypted in `~/.local/share/oc-<name>` and supplied only to the command or
