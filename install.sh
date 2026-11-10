@@ -4,7 +4,6 @@
 #   ./install.sh machine github azure  # installs these (names with or without the oc- prefix)
 #   ./install.sh all
 # Needs git and pixi (https://pixi.sh). Re-run any time to update.
-# oc-enhance features: OC_ENHANCE_FLAGS (default "--checkpoints --evidence"; add --terminals to share terminals).
 set -eu
 
 ALL="machine github atlassian rhythms runpod azure m365 claude enhance"
@@ -21,8 +20,8 @@ describe() {
     runpod) echo "RunPod pods, serverless, storage, SSH into pods" ;;
     azure) echo "Azure via the Azure CLI, SSH into VMs" ;;
     m365) echo "Outlook mail and calendar, Teams, OneDrive, SharePoint" ;;
-    claude) echo "Claude models in OpenCode via your Claude sign-in (release candidate)" ;;
-    enhance) echo "Task notes, pause/resume, document search, shared terminals (Apple Silicon Mac; release candidate)" ;;
+    claude) echo "Claude models in OpenCode with your own Claude sign-in" ;;
+    enhance) echo "Task notes with Pause/Resume, Word/Excel/PowerPoint/PDF, project search, shared terminals, Pixi" ;;
   esac
 }
 
@@ -44,18 +43,13 @@ failed=""
 for item in "$@"; do
   name="${item#oc-}"
   case " $ALL " in *" $name "*) ;; *) echo "Unknown plugin: $item (choose from: $ALL)" >&2; failed="$failed $name"; continue ;; esac
-  if [ "$name" = enhance ] && [ "$(uname -s)-$(uname -m)" != Darwin-arm64 ]; then
-    echo; echo "== oc-enhance: skipped (needs macOS on Apple Silicon)"; continue
-  fi
-  args=""
-  [ "$name" = enhance ] && args="${OC_ENHANCE_FLAGS:---checkpoints --evidence}"
   repo="$WHERE/oc-$name"
   echo
   echo "== oc-$name: $(describe "$name")"
   if [ -d "$repo/.git" ]; then git -C "$repo" pull --ff-only -q
   else git clone -q "$BASE/oc-$name.git" "$repo"
   fi
-  if (cd "$repo" && pixi run --locked install $args); then :; else failed="$failed $name"; fi
+  if (cd "$repo" && pixi run --locked install); then :; else failed="$failed $name"; fi
 done
 
 echo
