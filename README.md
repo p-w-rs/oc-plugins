@@ -17,7 +17,8 @@ itself works.
 | [oc-azure](https://github.com/p-w-rs/oc-azure) | Use the Azure CLI with your sign-in; SSH into VMs; Entra ID, DevOps, AI |
 | [oc-m365](https://github.com/p-w-rs/oc-m365) | Outlook mail and calendar, Teams, OneDrive and SharePoint (your IT may need to approve access) |
 | [oc-claude](https://github.com/p-w-rs/oc-claude) | Use Claude models in OpenCode with your own Claude sign-in (`/connect` → OpenClaude). Unofficial; check your account's terms |
-| [oc-enhance](https://github.com/p-w-rs/oc-enhance) | Task notes with a Pause/Resume button and handoffs to colleagues; read Word, Excel, PowerPoint and PDF; search a project by meaning; shared terminals; Pixi know-how |
+| [oc-enhance](https://github.com/p-w-rs/oc-enhance) | Task notes with a Pause/Resume button (stops background commands, saves a notes checkpoint) and handoffs to colleagues; reminders agents set for themselves; top-of-mind cues so agents don't forget their tools in long chats; read Word, Excel, PowerPoint and PDF; search a project by meaning; shared terminals |
+| [oc-pixi](https://github.com/p-w-rs/oc-pixi) | Agents use Pixi instead of pip/uv/conda: scripts with their dependencies inside (Python, R, C++ …), workspaces for projects in any language, a hint whenever they bypass Pixi, and the full Pixi docs bundled. Skip it if your team doesn't use Pixi |
 | [oc-knowhow](https://github.com/p-w-rs/oc-knowhow) | Expert know-how agents load when needed: statistics, experiment design and ablations, datasets, field-specific methods, gnuplot figures (2D/3D, interactive, animated), diagrams (D2, Graphviz, Mermaid, TikZ), ML training/deployment (TensorRT 11, Jetson) and GPU kernels; plus a private reference library they search and cite (free references download to your computer; add your own folders) |
 
 ## Install
