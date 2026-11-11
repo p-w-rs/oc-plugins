@@ -6,7 +6,7 @@
 # Needs git and pixi (https://pixi.sh). Re-run any time to update.
 set -eu
 
-ALL="machine github huggingface atlassian rhythms runpod azure m365 claude enhance"
+ALL="machine github huggingface atlassian rhythms runpod azure m365 claude enhance knowhow"
 BASE="${OC_PLUGINS_BASE:-https://github.com/p-w-rs}"
 DIR="$(cd "$(dirname "$0")" && pwd)"
 WHERE="${OC_PLUGINS_DIR:-$(dirname "$DIR")}"
@@ -22,7 +22,8 @@ describe() {
     azure) echo "Azure via the Azure CLI, SSH into VMs" ;;
     m365) echo "Outlook mail and calendar, Teams, OneDrive, SharePoint" ;;
     claude) echo "Claude models in OpenCode with your own Claude sign-in" ;;
-    enhance) echo "Task notes with Pause/Resume, Word/Excel/PowerPoint/PDF, project search, shared terminals, Pixi and ML know-how" ;;
+    enhance) echo "Task notes with Pause/Resume, Word/Excel/PowerPoint/PDF, project search, shared terminals, Pixi" ;;
+    knowhow) echo "Data science, gnuplot figures, diagrams and ML know-how; a private reference library with citations" ;;
   esac
 }
 
