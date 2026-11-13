@@ -24,7 +24,7 @@ describe() {
     claude) echo "Claude models in OpenCode with your own Claude sign-in" ;;
     enhance) echo "Task notes with Pause/Resume, reminders, top-of-mind cues, Word/Excel/PowerPoint/PDF, project search, shared terminals" ;;
     pixi) echo "Agents use Pixi for scripts and projects in any language; hints; bundled Pixi docs" ;;
-    knowhow) echo "Data science, gnuplot figures, diagrams and ML know-how; a private reference library with citations" ;;
+    knowhow) echo "Expert know-how: data science, figures, ML, Odin, Zenoh/ROS 2/MCAP, C libraries; a private reference library with citations" ;;
   esac
 }
 
