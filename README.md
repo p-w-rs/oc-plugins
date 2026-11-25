@@ -16,6 +16,7 @@ itself works.
 | [oc-runpod](https://github.com/p-w-rs/oc-runpod) | Manage RunPod pods, serverless and storage; SSH and rsync into pods |
 | [oc-azure](https://github.com/p-w-rs/oc-azure) | Use the Azure CLI with your sign-in; SSH into VMs; Entra ID, DevOps, AI |
 | [oc-m365](https://github.com/p-w-rs/oc-m365) | Outlook mail and calendar, Teams, OneDrive and SharePoint (your IT may need to approve access) |
+| [oc-google](https://github.com/p-w-rs/oc-google) | Google Drive files and sharing, and editing Google Docs, Sheets and Slides (you create your own Personal-mode Google sign-in client) |
 | [oc-claude](https://github.com/p-w-rs/oc-claude) | Use Claude models in OpenCode with your own Claude sign-in (`/connect` → OpenClaude). Unofficial; check your account's terms |
 | [oc-enhance](https://github.com/p-w-rs/oc-enhance) | Task notes with a Pause/Resume button (stops background commands, saves a notes checkpoint) and handoffs to colleagues; reminders agents set for themselves; top-of-mind cues so agents don't forget their tools in long chats; read Word, Excel, PowerPoint and PDF; search a project by meaning; shared terminals |
 | [oc-pixi](https://github.com/p-w-rs/oc-pixi) | Agents use Pixi instead of pip/uv/conda: scripts with their dependencies inside (Python, R, C++ …), workspaces for projects in any language, a hint whenever they bypass Pixi, and the full Pixi docs bundled. Skip it if your team doesn't use Pixi |
@@ -45,7 +46,7 @@ Run `install.sh` again to update. To remove a plugin: `cd oc-<name> && pixi run 
 
 ## How they behave
 
-The account plugins (machine through m365, and huggingface) share these rules; oc-claude and
+The account plugins (machine through google, and huggingface) share these rules; oc-claude and
 oc-enhance follow the same "don't change vanilla OpenCode" rule.
 
 - **Agents never see your secrets.** Tokens, keys and passwords are stored
