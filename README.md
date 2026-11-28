@@ -24,7 +24,7 @@ itself works.
 
 ## Install
 
-You need OpenCode 2.2.6 or newer (CLI or Desktop), [Pixi](https://pixi.sh)
+You need the current OpenCode (2.4.2; CLI or Desktop), [Pixi](https://pixi.sh)
 (`curl -fsSL https://pixi.sh/install.sh | sh`) and git, on macOS or Linux.
 
 ```sh
